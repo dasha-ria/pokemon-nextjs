@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Pagination from "../components/pagination";
 
-export default function Home({ pokemons, totalPokemons, postsPerPage }) {
+export default function Home({ pokemons, totalPokemons, postsPerPage, page }) {
   return (
     <>
       <div className="flex flex-wrap gap-10 justify-center mt-8 mb-8">
@@ -38,6 +38,7 @@ export default function Home({ pokemons, totalPokemons, postsPerPage }) {
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={totalPokemons}
+        currentPage={page}
       ></Pagination>
     </>
   );
@@ -55,6 +56,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       pokemons: results,
       postsPerPage: 20,
       totalPokemons: count,
+      page: page,
     },
   };
 };
