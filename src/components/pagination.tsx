@@ -27,14 +27,14 @@ export default function Pagination({ postsPerPage, totalPosts, currentPage }) {
     //   </ul>
     // </nav>
 
-    <nav>
+    <nav className="flex justify-center mt-12 mb-8">
       <ul className="inline-flex items-center -space-x-px">
         <li>
           <Link
             href={`?page=1`}
             className="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
-            <span className="sr-only">Previous</span>
+            <span className="sr-only">First page</span>
             <svg
               aria-hidden="true"
               className="w-5 h-5"
@@ -53,7 +53,7 @@ export default function Pagination({ postsPerPage, totalPosts, currentPage }) {
         <li>
           <Link
             href={`?page=${Math.max(currentPage - 1, 1)}`}
-            className="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className=" block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <span className="sr-only">Previous</span>
             <svg
@@ -84,7 +84,7 @@ export default function Pagination({ postsPerPage, totalPosts, currentPage }) {
         <li>
           <Link
             href={`?page=${Math.min(currentPage + 1, lastPage)}`}
-            className="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className=" block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
             <span className="sr-only">Next</span>
             <svg
@@ -107,7 +107,7 @@ export default function Pagination({ postsPerPage, totalPosts, currentPage }) {
             href={`?page=${lastPage}`}
             className="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
           >
-            <span className="sr-only">Next</span>
+            <span className="sr-only">Last page</span>
             <svg
               aria-hidden="true"
               className="w-5 h-5"
